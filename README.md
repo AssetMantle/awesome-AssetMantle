@@ -223,30 +223,51 @@ So, this section includes use cases of **mantleNode**, **RPC Endpoint**, **Webso
 
   - Websocket Example
 
-  ````json
-
+  ```json
   {
-      "jsonrpc": "2.0",
-      "method": "subscribe",
-      "params": [
+    "jsonrpc": "2.0",
+    "method": "subscribe",
+    "params": [
       "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'"
-      ],
-      "id": 1
+    ],
+    "id": 1
   }
+  ```
 
   - Result Output Structure (snipped ...)
 
-  ```json
-  {
-      "jsonrpc": "2.0",
-      "id": 1,
-      "result": {
-          "query": "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'",
-          "data": {
-          "type": "tendermint/event/Tx",
-          "value": {
-              "TxResult": {
-              "height": "1468096",
-              "index": 2,
-              "tx":
-  ````
+    ```json
+    {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+            "query": "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'",
+            "data": {
+            "type": "tendermint/event/Tx",
+            "value": {
+                "TxResult": {
+                "height": "1468096",
+                "index": 2,
+                "tx":
+    ```
+
+## Resources
+
+This section includes official, developer, community, and social resources.
+
+### Official Resources
+
+- AssetMantle Website — [https://assetmantle.one](https://assetmantle.one)
+- AssetMantle Explorer — [https://explorer.assetmantle.one](https://explorer.assetmantle.one)
+- AssetMantle MarketPlace — [https://marketplace.assetmantle.one](https://marketplace.assetmantle.one)
+- AssetMantle Devnet — [https://devnet.assetmantle.one](https://devnet.assetmantle.one)
+- AssetMantle Blog — [https://blog.assetmantle.one](https://blog.assetmantle.one)
+- AssetMantle Documentation — [https://docs.assetmantle.one](https://docs.assetmantle.one)
+- AssetMantle RPC — [https://rpc.assetmantle.one](https://rpc.assetmantle.one)
+- AssetMantle REST or LCD — [https://rest.assetmantle.one](https://rest.assetmantle.one)
+
+### Developer repositories
+
+- MantleNode Repository — https://github.com/AssetMantle/node
+- MantleWallet Repository — https://github.com/AssetMantle/wallet
+- Devnet Repository — https://github.com/AssetMantle/webApp
