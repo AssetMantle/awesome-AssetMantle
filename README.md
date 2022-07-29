@@ -156,94 +156,97 @@ So, this section includes use cases of **mantleNode**, **RPC Endpoint**, **Webso
 
 - Subscribe an event which output new block events
 
-  ```json
-  // WebSockets Examples
+  - Wesocket Example
 
+  ```json
   {
     "jsonrpc": "2.0",
     "method": "subscribe",
     "params": ["tm.event='NewBlock'"],
     "id": 1
   }
+  ```
 
-  // Result: Output Structure
+  - Result Output Structure (snipped ...)
 
+  ```json
   {
   "jsonrpc": "2.0",
   "id": 1,
   "result": {
-    "query": "tm.event='NewBlock'",
-    "data": {
+      "query": "tm.event='NewBlock'",
+      "data": {
       "type": "tendermint/event/NewBlock",
       "value": {
-        "block": {
+          "block": {
           "header": {
-            "version": {
+              "version": {
               "block": "11"
-            },
-            "chain_id": "mantle-1",
-            "height": "1494200",
-    --- snip ---
+              },
+              "chain_id": "mantle-1",
+              "height": "1494200",
   ```
 
 - Subscribe an event which output latest transaction events
 
-  ```json
-  // WebSockets Examples
+  - Websocket Example
 
+  ```json
   {
     "jsonrpc": "2.0",
     "method": "subscribe",
     "params": ["tm.event='Tx'"],
     "id": 1
   }
+  ```
 
-  // Result: Output Structure
+  - Result Output Structure (snipped ...)
 
+  ```json
   {
   "jsonrpc": "2.0",
   "id": 1,
   "result": {
-    "query": "tm.event='NewBlock'",
-    "data": {
+      "query": "tm.event='NewBlock'",
+      "data": {
       "type": "tendermint/event/NewBlock",
       "value": {
-        "block": {
+          "block": {
           "header": {
-            "version": {
+              "version": {
               "block": "11"
-            },
-            "chain_id": "mantle-1"
-    --- snip ---
+              },
+              "chain_id": "mantle-1"
   ```
 
 - Subscribe an event which output latest incoming transactions to a particular address events
 
-  ```json
-  // WebSockets Examples
+  - Websocket Example
+
+  ````json
 
   {
-    "jsonrpc": "2.0",
-    "method": "subscribe",
-    "params": [
+      "jsonrpc": "2.0",
+      "method": "subscribe",
+      "params": [
       "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'"
-    ],
-    "id": 1
+      ],
+      "id": 1
   }
 
-  // Result: Output Structure
+  - Result Output Structure (snipped ...)
 
+  ```json
   {
       "jsonrpc": "2.0",
       "id": 1,
       "result": {
-        "query": "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'",
-        "data": {
+          "query": "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'",
+          "data": {
           "type": "tendermint/event/Tx",
           "value": {
-            "TxResult": {
+              "TxResult": {
               "height": "1468096",
               "index": 2,
               "tx":
-    --- snip ---
-  ```
+  ````
