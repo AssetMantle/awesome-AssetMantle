@@ -151,3 +151,99 @@ So, this section includes use cases of **mantleNode**, **RPC Endpoint**, **Webso
   ```bash
   mantleNode query account "<address>" --chain-id "mantle-1" --node "https://rpc.assetmantle.one:443" --output "json"
   ```
+
+### Websockets
+
+- Subscribe an event which output new block events
+
+  ```json
+  // WebSockets Examples
+
+  {
+    "jsonrpc": "2.0",
+    "method": "subscribe",
+    "params": ["tm.event='NewBlock'"],
+    "id": 1
+  }
+
+  // Result: Output Structure
+
+  {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "query": "tm.event='NewBlock'",
+    "data": {
+      "type": "tendermint/event/NewBlock",
+      "value": {
+        "block": {
+          "header": {
+            "version": {
+              "block": "11"
+            },
+            "chain_id": "mantle-1",
+            "height": "1494200",
+    --- snip ---
+  ```
+
+- Subscribe an event which output latest transaction events
+
+  ```json
+  // WebSockets Examples
+
+  {
+    "jsonrpc": "2.0",
+    "method": "subscribe",
+    "params": ["tm.event='Tx'"],
+    "id": 1
+  }
+
+  // Result: Output Structure
+
+  {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "query": "tm.event='NewBlock'",
+    "data": {
+      "type": "tendermint/event/NewBlock",
+      "value": {
+        "block": {
+          "header": {
+            "version": {
+              "block": "11"
+            },
+            "chain_id": "mantle-1"
+    --- snip ---
+  ```
+
+- Subscribe an event which output latest incoming transactions to a particular address events
+
+  ```json
+  // WebSockets Examples
+
+  {
+    "jsonrpc": "2.0",
+    "method": "subscribe",
+    "params": [
+      "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'"
+    ],
+    "id": 1
+  }
+
+  // Result: Output Structure
+
+  {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "query": "tm.event = 'Tx' AND transfer.recipient = 'mantle1907n5d2xwy3av597y6347dsc2ktpl2d9u0j4tu'",
+        "data": {
+          "type": "tendermint/event/Tx",
+          "value": {
+            "TxResult": {
+              "height": "1468096",
+              "index": 2,
+              "tx":
+    --- snip ---
+  ```
