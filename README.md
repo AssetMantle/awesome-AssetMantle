@@ -16,7 +16,7 @@ This section includes examples related to **mantle-1** chain. Gradually, we will
   import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
   import { stringToPath } from "@cosmjs/crypto";
 
-  const mnemonic = "<your mnemonic";
+  const mnemonic = "<your mnemonic>";
   const wallet = await DirectSecp256k1HdWallet.fromMnemonic(
     mnemonic,
     { prefix: "mantle" },
@@ -83,6 +83,8 @@ This section includes examples related to **mantle-1** chain. Gradually, we will
 - Create new account on **mantle-1** chain
 
   ```javascript
+  // JavaScript Examples
+
   import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
   import { stringToPath } from "@cosmjs/crypto";
 
@@ -100,4 +102,52 @@ This section includes examples related to **mantle-1** chain. Gradually, we will
 
   become whale old bleak goose leader vivid armed digital shuffle fire input donor perfect patch found illegal basic vanish feel man try fall cactus
   mantle1y7pmvzpgwfvvq6zupqjfcgntauc90ww73wxs8s
+  ```
+
+## Use Cases
+
+So, this section includes use cases of **mantleNode**, **RPC Endpoint**, **Websockets**, **REST**, or **LCD Endpoint**.
+
+> 🚀 NOTE: Please, make sure you download essential packages, to test below examples. _Packages:_ go, jq, gcc, make, curl, git, vim and mantleNode (from github).
+
+### MantleNode
+
+- Initialize the default configurations
+
+  ```bash
+  # --keyring-backend and --home flags are optional
+  mantleNode init "<your-moniker-name>" --chain-id "mantle-1" --home "/home/node/.mantleNode
+  ```
+
+- Create keys on your remote system
+
+  ```bash
+  # --keyring-backend and --home flags are optional
+  mantleNode keys add "<key-name>" --keyring-backend "os" --home "/home/node/.mantleNode"
+  ```
+
+- Recover your keys with mnemonics on your remote system
+
+  ```bash
+  # --keyring-backend and --home flags are optional
+  mantleNode keys add "<key-name>" --recover --keyring-backend "os" --home "/home/node/.mantleNode"
+  ```
+
+- Or, if you want to import your keys from private keyfile
+
+  ```bash
+  # --keyring-backend and --home flags are optional
+  mantleNode keys import "<key-name>" "<key-file>" --keyring-backend "os" --home "/home/node/.mantleNode"
+  ```
+
+- Query your account balance
+
+  ```bash
+  mantleNode query bank balances "<address>" --chain-id "mantle-1" --node "https://rpc.assetmantle.one:443" --output "json"
+  ```
+
+- Query your account (address, number, sequences, and pub_key)
+
+  ```bash
+  mantleNode query account "<address>" --chain-id "mantle-1" --node "https://rpc.assetmantle.one:443" --output "json"
   ```
