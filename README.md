@@ -251,6 +251,52 @@ So, this section includes use cases of **mantleNode**, **RPC Endpoint**, **Webso
                 "tx":
     ```
 
+### Rest Endpoints
+
+- Get the latest blocks
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/blocks/latest" -H "accept: application/json" | jq "."
+```
+
+- Get a block at certain height
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/blocks/1" -H "accept: application/json" | jq "."
+```
+
+- Get the latest validator set
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/validatorsets/latest" -H "accept: application/json" | jq "."
+```
+
+- Get the validator set at certain height
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/validatorsets/1" -H "accept: application/json" | jq "."
+```
+
+- Get a transaction by hash
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/cosmos/tx/v1beta1/txs/41DDF1E326454CF6E6719D5E2D68DBE6AFE747C39FAF7BB3374029F36AA30EB0" -H "accept: application/json" | jq "."
+```
+
+- Total Supply of coins in a chain
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/bank/total" -H "accept: application/json" | jq "."
+```
+
+- Total Supply of particular coin in a chain
+
+```bash
+curl -sL -X GET "https://rest.assetmantle.one/bank/total/umntl" -H "accept: application/json" | jq "."
+```
+
+### RPC Endpoints
+
 ## Resources
 
 This section includes official, developer, community, and social resources.
@@ -271,3 +317,7 @@ This section includes official, developer, community, and social resources.
 - MantleNode Repository — https://github.com/AssetMantle/node
 - MantleWallet Repository — https://github.com/AssetMantle/wallet
 - Devnet Repository — https://github.com/AssetMantle/webApp
+
+```
+
+```
