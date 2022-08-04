@@ -347,3 +347,38 @@ and use a trusted height from the rpc, recent height will work as well
 ```shell
 curl -s https://rpc.assetmantle.one/status | jq '.result .sync_info | {trust_height: .latest_block_height, trust_hash: .latest_block_hash} | values'
 ```
+
+## Validator Contributions
+
+This section includes validator contributions:
+
+### Wallets
+
+- [EZStaking](https://asset-mantle.ezstaking.io/)
+- [Mtstake](https://assetmantle.mtstake.top/)
+- [Nodestake](https://rpc.assetmantle.nodestake.top)
+
+### Explorer
+
+- [Nodes.Guru](https://assetmantle.explorers.guru/)
+- [EZStaking](https://asset-mantle.ezstaking.io/explore)
+
+### Monitoring
+
+- [CrosNest](https://chain-monitor.cros-nest.com/d/Cros-nest/block-chains?var-chain_id=mantle-1&orgId=1)
+- [Imperator](https://info.osmosis.zone/token/MNTL)
+
+### Relayers
+
+- [CrosNest](https://gist.github.com/Galadrin/60f95a5714c334bb892ae99c1d6775c7)
+- [Blockscope, StakeAngle, BloClick, Duality, Nodestake](https://www.mintscan.io/asset-mantle/relayers/channel-0)
+- [2xstake](https://www.mintscan.io/asset-mantle/relayers/channel-4)
+- [Duality](https://www.mintscan.io/asset-mantle/relayers/channel-2)
+
+### RPCs
+
+- [StakeAngle](https://assetmantle-rpc.stakeangle.com/)
+- [Stake2](https://mantle.rpc.stake2.me/)
+- [Doma Nodes](http://rpc.mantle-1.domanodes.com/)
+
+### Bots & Toolings
